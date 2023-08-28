@@ -1,8 +1,13 @@
 <div class="container">  
   <div class="row">
     <div class="col-xs-12">
-      <h1>No App Component</h1>
-      <app-new-account></app-new-account>
+      <h1>In App Component</h1>
+      <app-new-account
+        (account)="pushToAccount($event)"
+      ></app-new-account>
+      <button  
+        (click)="logAccount()"
+      >Click me</button>
     </div>
   </div>
 </div>
