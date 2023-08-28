@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-account.component.css']
 })
 export class NewAccountComponent {
-
+  onCreateAccount(accountName:string,accountStatus:string){
+    let account:any = {'nome':accountName,'status':accountStatus} 
+    console.log(account);
+  }
 }
