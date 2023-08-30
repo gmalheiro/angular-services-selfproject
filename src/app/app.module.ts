@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountComponent } from './account/account.component';
+import { AccountsService } from './shared/accounts.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AccountComponent } from './account/account.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
