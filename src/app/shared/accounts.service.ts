@@ -4,6 +4,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AccountsService {
-
-  constructor() { }
+  accounts:[{'name':string,'status':string}] = [{'name':'First element','status':'active'}];
 }
