@@ -8,15 +8,15 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   title = 'angular-services-selfproject';
 
-  account:[{'name':string,'status':string}] = [{'name':'First element','status':'active'}];
+  accounts:[{'name':string,'status':string}] = [{'name':'First element','status':'active'}];
 
   pushToAccount(obj:any){
-    this.account.push(obj);
+    this.accounts.push(obj);
   }
 
   logAccount(){
     console.log('From app');
-    this.account.forEach( (element) => console.log(element) );
+    this.accounts.forEach( (element) => console.log(element) );
   }
 
 }
