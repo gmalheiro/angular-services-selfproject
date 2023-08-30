@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccountsService } from './shared/accounts.service';
 
 @Component({
@@ -10,7 +10,13 @@ import { AccountsService } from './shared/accounts.service';
 export class AppComponent {
   title = 'angular-services-selfproject';
 
-  accounts:[{'name':string,'status':string}] = [{'name':'First element','status':'active'}];
+  constructor(private accountsService:AccountsService){}
+
+  accounts:{'name':string,'status':string}[] = [];
+
+  ngOnInit() : void{
+    this.accounts = this.accountsService.accounts;
+  }
 
   pushToAccount(obj:any){
     this.accounts.push(obj);
