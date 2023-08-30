@@ -10,8 +10,8 @@ export class AccountComponent {
   @Input() account: {name: string, status: string};
   @Input() id: number;
 
-  onSetTo(status:string){
-    console.log(status);
+  onSetTo(newStatus:string,id:number){
+    this.account.status = newStatus;
   }
 
 }
