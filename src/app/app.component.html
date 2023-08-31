@@ -3,11 +3,7 @@
     <div class="col-xs-12">
       <h1>In App Component</h1>
       <app-new-account
-        (account)="pushToAccount($event)"
       ></app-new-account>
-      <button  
-        (click)="logAccount()"
-      >Click me</button>
       <hr>
       <app-account
       *ngFor="let acc of accounts; let i = index"
