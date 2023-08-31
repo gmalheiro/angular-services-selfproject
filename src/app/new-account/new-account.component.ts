@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
+import { AccountsService } from '../shared/accounts.service';
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
@@ -7,11 +8,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NewAccountComponent {
 
-  	@Output() account = new EventEmitter<{'accountName':string,'accountStatus':string}>
+  constructor(private accountsService:AccountsService) {
+   this.accountsService.statusUpdated.subscribe((status:string) =>(alert('New status: '+status)));
+
+  }
 
   onCreateAccount(accountName:string,accountStatus:string){
-    let account:any = {'nome':accountName,'status':accountStatus} 
-    console.log(account);
-    this.account.emit(account);
+   this.accountsService.pushToAccount({name:accountName,status:accountStatus})
+   console.log('New account added:'+ JSON.stringify({name:accountName,status:accountStatus}));
   }
 }
