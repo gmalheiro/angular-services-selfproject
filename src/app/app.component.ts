@@ -17,14 +17,5 @@ export class AppComponent {
   ngOnInit() : void{
     this.accounts = this.accountsService.accounts;
   }
-
-  pushToAccount(obj:any){
-    this.accounts.push(obj);
-  }
-
-  logAccount(){
-    console.log('From app');
-    this.accounts.forEach( (element) => console.log(element) );
-  }
-
+  
 }
