@@ -12,6 +12,7 @@ export class AccountComponent {
 
   onSetTo(newStatus:string,id:number){
     this.account.status = newStatus;
+    console.log('new status: '+newStatus);
   }
 
 }
